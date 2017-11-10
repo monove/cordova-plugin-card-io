@@ -5,6 +5,28 @@ This plug-in exposes card.io credit card scanning.
 
 Note: If you would like to actually process a credit card charge, you might be interested in the [PayPal Cordova Plug-in](https://github.com/paypal/PayPal-Cordova-Plugin).
 
+
+
+### iOS Quirks
+
+Since iOS 10 it's mandatory to add a `NSCameraUsageDescription` and `NSPhotoLibraryUsageDescription` in the info.plist.
+
+- `NSCameraUsageDescription` describes the reason that the app accesses the user’s camera.
+
+When the system prompts the user to allow access, this string is displayed as part of the dialog box. 
+
+To add this entry you can pass the following variables on plugin install.
+
+- `CAMERA_USAGE_DESCRIPTION` for `NSCameraUsageDescription`
+
+Example:
+
+    cordova plugin add cordova-plugin-card-io --variable CAMERA_USAGE_DESCRIPTION="your usage message"
+
+If you don't pass the variable, the plugin will add an empty string as value.
+
+---
+
 Maintenance of this repository
 ------------------------------
 
@@ -48,7 +70,7 @@ The card.io Cordova Plugin adds support for the CardIO iOS and android platform.
    $ cd ScanCard
    $ cordova platform add ios
    $ cordova platform add android
-   $ cordova plugin add https://github.com/card-io/card.io-Cordova-Plugin
+   $ cordova plugin add cordova-plugin-card-io
 ```
 
 1.	Follow Your app integration section below.

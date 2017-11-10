@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (c) 2014 PayPal. All rights reserved. -->
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-card-io" version="2.1.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-card-io" version="2.1.1">
 	<name>
 		CardIO
 	</name>
@@ -52,6 +52,11 @@
 		<framework src="Security.framework" />
 		<framework src="UIKit.framework" />
 		<framework src="libc++.dylib" />
+
+		<preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+             <string>$CAMERA_USAGE_DESCRIPTION</string>
+         </config-file>
 	</platform>
 	<!-- android -->
 	<platform name="android">
