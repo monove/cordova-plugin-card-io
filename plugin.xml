@@ -53,7 +53,7 @@
 		<framework src="UIKit.framework" />
 		<framework src="libc++.dylib" />
 
-		<preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+		<preference name="CAMERA_USAGE_DESCRIPTION" default="Camera access is required to scan your credit card" />
          <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
              <string>$CAMERA_USAGE_DESCRIPTION</string>
          </config-file>
